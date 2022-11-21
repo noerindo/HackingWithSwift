@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         
         askQuestion(action: nil)
         
+         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .plain, target: self, action: #selector(checkScore))
+        
     }
     func askQuestion(action: UIAlertAction! = nil) {
             countries.shuffle()
@@ -91,6 +93,8 @@ class ViewController: UIViewController {
         present(ac, animated: true)
 
     }
+    @objc func checkScore(){
+        callAlert(title: "Score", message: "Your score is \(score)", addHandler: false)
+    }
   
 }
-
